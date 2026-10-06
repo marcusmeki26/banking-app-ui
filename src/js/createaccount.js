@@ -59,7 +59,7 @@ export function createAccount(){
   formCreateAcc.appendChild(divDeposit);
 
   const saveBtn = document.createElement("button");
-  classes = ["bg-confirm", "text-primaryBg", "rounded-md", "py-[.3rem]"];
+  classes = ["bg-confirm", "text-primaryBg", "rounded-md", "py-[.3rem]", "cursor-pointer"];
   saveBtn.classList.add(...classes);
   saveBtn.textContent = "Add account";
   saveBtn.type = "button";
@@ -98,10 +98,8 @@ export function createAccount(){
         }
       })
       .catch(error => {
-        if(error.response.status == 409){
-          alert(`${error.response.data.code}\n
-                  ${error.response.data.message}`);
-        }
+        alert(`${error.response.data.code}\n
+                ${error.response.data.message}`);
       });
   });
 }

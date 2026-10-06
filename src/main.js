@@ -1,5 +1,9 @@
 const navTab = document.getElementById("nav-lists");
 
+const url = new URL(window.location.href);
+const newUrl = url.origin;
+window.history.pushState({}, "", newUrl);
+
 for(const li of navTab.children){
   li.addEventListener("click", () => {
     navigate(li.textContent);
@@ -24,6 +28,18 @@ function navigate(tab){
         window.history.pushState({}, "", newUrl);
   
         createAccount();
+      })
+      .catch((err) => {
+        console.error("Failed to load module:", err);
+      });
+  }else if(tab.toLowerCase() == "balance inquiry"){
+    import('./js/balanceinquiry.js')
+      .then(({ balanceInquiry }) => {
+        const url = new URL(window.location.href);
+        const newUrl = url.origin + "/balance-inquiry";
+        window.history.pushState({}, "", newUrl);
+
+        balanceInquiry();
       })
       .catch((err) => {
         console.error("Failed to load module:", err);
