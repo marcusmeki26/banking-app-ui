@@ -58,5 +58,17 @@ function navigate(tab){
       .catch((err) => {
         console.error("Failed to load module: ", err);
       });
+  }else if(tab.toLowerCase() == "deposit"){
+    import("./js/deposit.js")
+    .then(({ deposit }) => {
+      const url = new URL(window.location.href);
+        const newUrl = url.origin + "/deposit";
+        window.history.pushState({}, "", newUrl);
+
+        deposit();
+    })
+    .catch((err) => {
+      console.error("Failed to load module: ", err);
+    });
   }
 }

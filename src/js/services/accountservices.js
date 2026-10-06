@@ -10,8 +10,12 @@ export const accountServices = {
     const response = await api.get(`${accountEndpoint}`);
     return response;
   },
-  postAccount: async (account) => {
-    const response = await api.post(`${accountEndpoint}`, account)
+  postAccount: async (accountReq) => {
+    const response = await api.post(`${accountEndpoint}`, accountReq)
+    return response;
+  },
+  deposit: async (depositReq) => {
+    const response = await api.post(`${accountEndpoint}/deposit`, depositReq);
     return response;
   }
 }
