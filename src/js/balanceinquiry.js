@@ -84,7 +84,7 @@ export function balanceInquiry(){
           
           // Current balance
           const spanBalance = document.createElement("span");
-          spanBalance.textContent = "Current Balance: " + formatNumberToPhp.format(response.data.deposit);
+          spanBalance.textContent = "Current Balance: " + formatNumberToPhp.format(response.data.balance);
           divPopupCntr.appendChild(spanBalance);
           
           const okBtn = document.createElement("button");

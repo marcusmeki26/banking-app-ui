@@ -89,7 +89,7 @@ export function createAccount(){
         if(response.status == 200 || response.status == 201){
           alert(`Account Number: ${response.data.accountNumber}\n
                 Account Holder Name: ${response.data.accountHolderName}\n
-                Balance: ${response.data.deposit}\n
+                Balance: ${response.data.balance}\n
                 Added Successfully!`);
 
           inputAccNumber.value = "";
