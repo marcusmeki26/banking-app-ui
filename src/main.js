@@ -60,12 +60,24 @@ function navigate(tab){
       });
   }else if(tab.toLowerCase() == "deposit"){
     import("./js/deposit.js")
-    .then(({ deposit }) => {
+      .then(({ deposit }) => {
+        const url = new URL(window.location.href);
+          const newUrl = url.origin + "/deposit";
+          window.history.pushState({}, "", newUrl);
+
+          deposit();
+      })
+      .catch((err) => {
+        console.error("Failed to load module: ", err);
+      });
+  }else if(tab.toLowerCase() == "withdraw"){
+    import("./js/withdraw.js")
+    .then(({ withdraw }) => {
       const url = new URL(window.location.href);
-        const newUrl = url.origin + "/deposit";
+        const newUrl = url.origin + "/withdraw";
         window.history.pushState({}, "", newUrl);
 
-        deposit();
+        withdraw();
     })
     .catch((err) => {
       console.error("Failed to load module: ", err);

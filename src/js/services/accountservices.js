@@ -17,5 +17,9 @@ export const accountServices = {
   deposit: async (depositReq) => {
     const response = await api.post(`${accountEndpoint}/deposit`, depositReq);
     return response;
+  },
+  withdraw: async (withdrawReq) => {
+    const response = await api.post(`${accountEndpoint}/withdraw`, withdrawReq);
+    return response;
   }
 }
