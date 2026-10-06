@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>banking-app-ui</title>
+  </head>
+  <body id="body" class="flex flex-col w-full h-screen">
+    <h1 class="bg-primaryColor text-primaryBg text-xl font-extrabold py-[.8rem]">Simple Banking Application</h1>
+    <div class="flex flex-2">
+      <nav class="flex-1 bg-primaryColor text-primaryBg pt-[.5rem] px-[.5rem]">
+        <ul id="nav-lists">
+          <li>Create Account</li>
+          <li>Balance Inquiry</li>
+          <li>List Accounts</li>
+          <li>Deposit</li>
+          <li>Withdraw</li>
+          <li>Transfer</li>
+          <li>Transaction History</li>
+        </ul>
+      </nav>
+      <div class="flex-7 h-full w-full" id="app"
+      ></div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

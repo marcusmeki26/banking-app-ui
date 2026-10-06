@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+
+@theme {
+  /* Colors */
+  --color-primaryBg: #FFF;
+  --color-secondaryBg: #F5F6F8;
+  --color-primaryColor: #3A6EA5; /* Old #2E2E2E */
+  --color-secondaryColor: #6B6B6B;
+  --color-confirm: #28A74D;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Inter", "Roboto", "Arial", "sans-serif";
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  transition: all ease .3s;
+}
+
+#nav-lists li.active{
+  background-color: #FFF;
+  color: #3A6Ea5;
+  border-radius: .3rem;
+}
