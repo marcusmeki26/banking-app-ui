@@ -1,3 +1,5 @@
+import { accountList } from "./js/accountlist.js";
+
 const navTab = document.getElementById("nav-lists");
 
 const url = new URL(window.location.href);
@@ -21,7 +23,7 @@ function navigate(tab){
   }
 
   if(tab.toLowerCase() == "create account"){
-    import('./js/createaccount.js')
+    import("./js/createaccount.js")
       .then(({ createAccount }) => {
         const url = new URL(window.location.href);
         const newUrl = url.origin + "/create-account";
@@ -33,7 +35,7 @@ function navigate(tab){
         console.error("Failed to load module:", err);
       });
   }else if(tab.toLowerCase() == "balance inquiry"){
-    import('./js/balanceinquiry.js')
+    import("./js/balanceinquiry.js")
       .then(({ balanceInquiry }) => {
         const url = new URL(window.location.href);
         const newUrl = url.origin + "/balance-inquiry";
@@ -43,6 +45,18 @@ function navigate(tab){
       })
       .catch((err) => {
         console.error("Failed to load module:", err);
+      });
+  }else if(tab.toLowerCase() == "list accounts"){
+    import("./js/accountlist.js")
+      .then(({ accountList }) => {
+        const url = new URL(window.location.href);
+        const newUrl = url.origin + "/list-account";
+        window.history.pushState({}, "", newUrl);
+
+        accountList();
+      })
+      .catch((err) => {
+        console.error("Failed to load module: ", err);
       });
   }
 }
