@@ -73,7 +73,7 @@ function navigate(tab){
   }else if(tab.toLowerCase() == "withdraw"){
     import("./js/withdraw.js")
     .then(({ withdraw }) => {
-      const url = new URL(window.location.href);
+        const url = new URL(window.location.href);
         const newUrl = url.origin + "/withdraw";
         window.history.pushState({}, "", newUrl);
 
@@ -82,5 +82,17 @@ function navigate(tab){
     .catch((err) => {
       console.error("Failed to load module: ", err);
     });
+  }else if(tab.toLowerCase() == "transfer"){
+    import("./js/transfer.js")
+      .then(({ transfer }) => {
+        const url = new URL(window.location.href);
+        const newUrl = url.origin + "/transfer";
+        window.history.pushState({}, "", newUrl);
+
+        transfer();
+      })
+      .catch((err) => {
+        console.error("Failed to load module: ", err);
+      });
   }
 }

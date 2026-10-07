@@ -21,5 +21,9 @@ export const accountServices = {
   withdraw: async (withdrawReq) => {
     const response = await api.post(`${accountEndpoint}/withdraw`, withdrawReq);
     return response;
+  },
+  transfer: async (transferReq) => {
+    const response = await api.post(`${accountEndpoint}/transfer`, transferReq);
+    return response;
   }
 }
