@@ -1,4 +1,5 @@
 import { accountList } from "./js/accountlist.js";
+import { transactionHistory } from "./js/transactionhistory.js";
 
 const navTab = document.getElementById("nav-lists");
 
@@ -90,6 +91,18 @@ function navigate(tab){
         window.history.pushState({}, "", newUrl);
 
         transfer();
+      })
+      .catch((err) => {
+        console.error("Failed to load module: ", err);
+      });
+  }else if(tab.toLowerCase() == "transaction history"){
+    import("./js/transactionhistory.js")
+      .then(({ transactionHistory }) => {
+        const url = new URL(window.location.href);
+        const newUrl = url.origin + "/transaction-history";
+        window.history.pushState({}, "", newUrl);
+
+        transactionHistory();
       })
       .catch((err) => {
         console.error("Failed to load module: ", err);

@@ -24,12 +24,18 @@ export async function accountList(){
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   const thAccNumber = document.createElement("th");
+  classes = ["text-left"];
+  thAccNumber.classList.add(...classes);
   thAccNumber.textContent = "Account Number";
   tr.appendChild(thAccNumber);
   const thCardHolderName = document.createElement("th");
+  classes = ["text-left"];
+  thCardHolderName.classList.add(...classes);
   thCardHolderName.textContent = "Account Holder";
   tr.appendChild(thCardHolderName);
   const thBalance = document.createElement("th");
+  classes = ["text-left"];
+  thBalance.classList.add(...classes);
   thBalance.textContent = "Current Balance";
   tr.appendChild(thBalance);
   thead.appendChild(tr);
@@ -53,9 +59,11 @@ export async function accountList(){
           table.appendChild(tr);
         });
       }else{
-        const spanMessage = document.createElement("span");
-        spanMessage.textContent = "No content available";
-        div.appendChild(spanMessage);
+        const tr = document.createElement("tr");
+        const tdMessage = document.createElement("td");
+        tdMessage.textContent = "No content available";
+        tr.appendChild(tdMessage);
+        table.appendChild(tr);
       }
     })
     .catch((error) => {
