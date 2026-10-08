@@ -1,7 +1,7 @@
-### **Personal Project — Full-Stack Web Banking Application**
+# **Personal Project — Full-Stack Web Banking Application**
 
 A full-stack personal project website to showcase my knowledge about how two application communicate with each other.
-This full-stack personal project showcases my technical skills, professional experienc, and background with modern technology
+This full-stack personal project showcases my technical skills, professional experience, and background with modern technology
 
 The application consits of frontend and a dedicated backend using Java SpringBoot.
 The application performs **CRUD operations**, inspired by day-to-day task of a **banking system**.
@@ -73,8 +73,8 @@ The project intentionally uses **plain HTML, CSS, and JavaScript** rather than a
 **Vite** provides the development and build environment, while **Axios** simplifies communication with the backend API. **Tailwind CSS v4** provides utility classes for building a responsive and consistent interface without requiring a large custom CSS codebase.
 
 ## **API Configuration**
-The frontend communicates with the backend using an environment variable.
-Example:
+The frontend communicates with the backend using an environment variable.  
+Example:  
 VITE_BE_BASE_PATH_V1 = http://localhost:8080
 
 ## **Installation**
@@ -84,10 +84,10 @@ git clone marcusmeki26/banking-app-ui
 cd frontend
 3. Install dependencies
 npm install
-4. Configure environment variables
-Create a .env file in the project root:
+4. Configure environment variables  
+Create a .env file in the project root:  
 
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:5000/api  
 Make sure the URL points to the running backend API.
 
 5. Start the development server
@@ -95,8 +95,8 @@ npm run dev
 The frontend should now be available at the development URL provided by your frontend framework.
 
 --- 
-### **Author**
-## **Your Name**
+## **Author**
+### **Your Name**
 
 GitHub: [Github Profile](https://github.com/marcusmeki26)  
 Email: felixmenamarcus@gmail.com  
