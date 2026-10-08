@@ -11,7 +11,7 @@ The application performs **CRUD operations**, inspired by day-to-day task of a *
 ⚙️ Backend: https://github.com/marcusmeki26/banking-app
 
 ## **Overview**
-This project is the frontend application of my personal project
+This project is the frontend application of my personal project **Banking Application**
 
 It was designed and developed from stracth with a focus on:
 - Clean and modern UI
