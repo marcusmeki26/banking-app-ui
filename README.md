@@ -45,27 +45,27 @@ The frontend follows a Single Page Application (SPA) architecture. Instead of lo
 
 The frontend communicates with the dedicated backend through HTTP requests using Axios:
 
-┌──────────────────────────────────┐
-│          Frontend SPA             │
-│                                  │
-│  HTML + CSS + JavaScript         │
-│  Tailwind CSS v4                 │
-│                                  │
-│          Axios                   │
-└───────────────┬──────────────────┘
-                │
-                │ HTTP / REST API
-                ▼
-┌──────────────────────────────────┐
-│          Java Spring Boot        │
-│                                  │
-│       API / Business Logic       │
-└───────────────┬──────────────────┘
-                │
-                ▼
-┌──────────────────────────────────┐
-│             MySQL                │
-└──────────────────────────────────┘
+┌──────────────────────────────────┐  
+│          Frontend SPA            │  
+│                                  │  
+│  HTML + CSS + JavaScript         │  
+│  Tailwind CSS v4                 │  
+│                                  │  
+│          Axios                   │  
+└───────────────┬──────────────────┘  
+                │  
+                │ HTTP / REST API  
+                ▼  
+┌──────────────────────────────────┐  
+│          Java Spring Boot        │  
+│                                  │  
+│       API / Business Logic       │  
+└───────────────┬──────────────────┘  
+                │  
+                ▼  
+┌──────────────────────────────────┐  
+│             MySQL                │  
+└──────────────────────────────────┘  
 
 ## **Why These Technologies?**
 The project intentionally uses **plain HTML, CSS, and JavaScript** rather than a frontend framework. This keeps the application lightweight while demonstrating the fundamental concepts behind API communication, and CRUD operations.
@@ -98,6 +98,6 @@ The frontend should now be available at the development URL provided by your fro
 ### **Author**
 ## **Your Name**
 
-GitHub: [Github Profile](https://github.com/marcusmeki26)
-Email: felixmenamarcus@gmail.com
-Portfolio: [Personal Portfolio Website](https://marcusmeki26.github.io/)
+GitHub: [Github Profile](https://github.com/marcusmeki26)  
+Email: felixmenamarcus@gmail.com  
+Portfolio: [Personal Portfolio Website](https://marcusmeki26.github.io/)  
