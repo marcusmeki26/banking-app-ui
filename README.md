@@ -79,7 +79,7 @@ VITE_BE_BASE_PATH_V1 = http://localhost:8080
 
 ## **Installation**
 1. Clone the repository
-git clone marcusmeki26/banking-app-ui
+git clone https://github.com/marcusmeki26/banking-app-ui.git
 2. Navigate to the frontend directory
 cd frontend
 3. Install dependencies
