@@ -44,7 +44,7 @@ The frotend is built using a lightweight web stack and follows a **Single Page A
 The frontend follows a Single Page Application (SPA) architecture. Instead of loading a separate HTML page for every application view, the frontend loads the application once and dynamically updates the UI as the user interacts with it.
 
 The frontend communicates with the dedicated backend through HTTP requests using Axios:
-
+```
 ┌──────────────────────────────────┐  
 │          Frontend SPA            │  
 │                                  │  
@@ -66,7 +66,7 @@ The frontend communicates with the dedicated backend through HTTP requests using
 ┌──────────────────────────────────┐  
 │             MySQL                │  
 └──────────────────────────────────┘  
-
+```
 ## **Why These Technologies?**
 The project intentionally uses **plain HTML, CSS, and JavaScript** rather than a frontend framework. This keeps the application lightweight while demonstrating the fundamental concepts behind API communication, and CRUD operations.
 
