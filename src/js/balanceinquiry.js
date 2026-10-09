@@ -69,7 +69,7 @@ export function balanceInquiry(){
           const h1Title = document.createElement("h1");
           classes = ["text-3xl", "font-extrabold"];
           h1Title.classList.add(...classes);
-          h1Title.textContent = "Account Information";
+          h1Title.textContent = "Balance Inquiry";
           divPopupCntr.appendChild(h1Title);
 
           // Account number

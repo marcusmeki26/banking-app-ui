@@ -2,6 +2,11 @@ import { accountServices } from "./services/accountservices";
 import { createInputText } from "./utilities";
 
 export function createAccount(){
+  const formatNumberToPhp = new Intl.NumberFormat("en-PH", {
+    style: "currency",
+    currency: "PHP"
+  });
+
   const app = document.getElementById("app");
 
   let classes; 
@@ -87,14 +92,53 @@ export function createAccount(){
     await accountServices.postAccount(account)
       .then(response => {
         if(response.status == 200 || response.status == 201){
-          alert(`Account Number: ${response.data.accountNumber}\n
-                Account Holder Name: ${response.data.accountHolderName}\n
-                Balance: ${response.data.balance}\n
-                Added Successfully!`);
+          const body = document.getElementById("body");
 
-          inputAccNumber.value = "";
-          inputAccHolderName.value = "";
-          inputDeposit.value = "";
+          const divPopup = document.createElement("div");
+          classes = ["flex", "justify-center", "items-center", "absolute", "w-full", "h-full", "bg-secondaryBg/50", "text-primaryColor", "z-[3]"];
+          divPopup.classList.add(...classes);
+
+          const divPopupCntr = document.createElement("div");
+          classes = ["flex", "flex-col", "gap-[.6rem]", "w-[30%]", "h-max","bg-primaryBg", "p-2", "rounded-md", "shadow-md"];
+          divPopupCntr.classList.add(...classes);
+          
+          const h1Title = document.createElement("h1");
+          classes = ["text-3xl", "font-extrabold"];
+          h1Title.classList.add(...classes);
+          h1Title.textContent = "Added successfully!";
+          divPopupCntr.appendChild(h1Title);
+
+          // Account Number
+          const spanPrevBalance = document.createElement("span");
+          spanPrevBalance.textContent = "Account Number: " + response.data.accountNumber;
+          divPopupCntr.appendChild(spanPrevBalance);
+          
+          // Account Holder Name
+          const spanWithdrawAmount = document.createElement("span");
+          spanWithdrawAmount.textContent = "Account Holder Name: " + response.data.accountHolderName;
+          divPopupCntr.appendChild(spanWithdrawAmount);
+          
+          // Balance
+          const spanNewBalance = document.createElement("span");
+          spanNewBalance.textContent = "Balance: " + formatNumberToPhp.format(response.data.balance);
+          divPopupCntr.appendChild(spanNewBalance);
+          
+          const okBtn = document.createElement("button");
+          classes = ["bg-confirm", "text-primaryBg", "rounded-md", "py-[.3rem]", "cursor-pointer"];
+          okBtn.classList.add(...classes);
+          okBtn.textContent = "OK";
+          okBtn.type = "button";
+          divPopupCntr.appendChild(okBtn);
+
+          divPopup.appendChild(divPopupCntr);
+          body.appendChild(divPopup);
+          
+          okBtn.addEventListener("click", () => {
+            body.removeChild(divPopup);
+            inputAccNumber.value = "";
+            inputAccHolderName.value = "";
+            inputDeposit.value = "";
+          });
         }
       })
       .catch(error => {
