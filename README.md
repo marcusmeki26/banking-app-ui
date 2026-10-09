@@ -76,6 +76,8 @@ The project intentionally uses **plain HTML, CSS, and JavaScript** rather than a
 The frontend communicates with the backend using an environment variable.  
 Example:  
 VITE_BE_BASE_PATH_V1 = http://localhost:8080
+VITE_ACCOUNT_ENDPOINT = /v1/account
+VITE_TRANSACTION_ENDPOINT = /v1/transaction
 
 ## **Installation**
 1. Clone the repository
@@ -87,7 +89,9 @@ npm install
 4. Configure environment variables  
 Create a .env file in the project root:  
 
-VITE_API_URL=http://localhost:5000/api  
+VITE_BE_API_BASE_PATH_V1 = http://localhost:5000/api 
+VITE_ACCOUNT_ENDPOINT = /v1/account
+VITE_TRANSACTION_ENDPOINT = /v1/transaction 
 Make sure the URL points to the running backend API.
 
 5. Start the development server
@@ -96,7 +100,7 @@ The frontend should now be available at the development URL provided by your fro
 
 --- 
 ## **Author**
-### **Your Name**
+### **Daniel Marcus Felixmeña**
 
 GitHub: [Github Profile](https://github.com/marcusmeki26)  
 Email: felixmenamarcus@gmail.com  
