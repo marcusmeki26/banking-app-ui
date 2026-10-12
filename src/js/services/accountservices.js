@@ -1,3 +1,4 @@
+import { deleteAccount } from '../deleteaccount';
 import api from './api';
 const accountEndpoint = import.meta.env.VITE_ACCOUNT_ENDPOINT;
 
@@ -25,5 +26,13 @@ export const accountServices = {
   transfer: async (transferReq) => {
     const response = await api.post(`${accountEndpoint}/transfer`, transferReq);
     return response;
+  },
+  patchAccount: async (patchRequest, accountNumber) => {
+    const response = await api.patch(`${accountEndpoint}/${accountNumber}`, patchRequest);
+    return response;
+  },
+  deleteAccount: async (accountNumber) => {
+    const response = await api.delete(`${accountEndpoint}/${accountNumber}`);
+    return response
   }
 }

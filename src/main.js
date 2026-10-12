@@ -1,6 +1,3 @@
-import { accountList } from "./js/accountlist.js";
-import { transactionHistory } from "./js/transactionhistory.js";
-
 const navTab = document.getElementById("nav-lists");
 
 const url = new URL(window.location.href);
@@ -31,6 +28,30 @@ function navigate(tab){
         window.history.pushState({}, "", newUrl);
   
         createAccount();
+      })
+      .catch((err) => {
+        console.error("Failed to load module:", err);
+      });
+  }else if(tab.toLowerCase() == "update account"){
+    import("./js/updateaccount.js")
+      .then(({ updateAccount }) => {
+        const url = new URL(window.location.href);
+        const newUrl = url.origin + "/create-account";
+        window.history.pushState({}, "", newUrl);
+  
+        updateAccount();
+      })
+      .catch((err) => {
+        console.error("Failed to load module:", err);
+      });
+  }else if(tab.toLowerCase() == "delete account"){
+    import("./js/deleteaccount.js")
+      .then(({ deleteAccount }) => {
+        const url = new URL(window.location.href);
+        const newUrl = url.origin + "/delete-account";
+        window.history.pushState({}, "", newUrl);
+
+        deleteAccount();
       })
       .catch((err) => {
         console.error("Failed to load module:", err);
