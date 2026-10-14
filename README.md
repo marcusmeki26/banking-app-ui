@@ -6,7 +6,7 @@ This full-stack personal project showcases my technical skills, professional exp
 The application consits of frontend and a dedicated backend using Java SpringBoot.
 The application performs **CRUD operations**, inspired by day-to-day task of a **banking system**.
 
-🌐 Live Demo:  
+🌐 Live Demo: https://my-banking-application.vercel.app/
 💻 Frontend: https://github.com/marcusmeki26/banking-app-ui  
 ⚙️ Backend: https://github.com/marcusmeki26/banking-app
 
